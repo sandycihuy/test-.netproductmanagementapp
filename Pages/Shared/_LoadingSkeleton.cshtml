@@ -1,0 +1,36 @@
+@{
+    // Default values
+    int count = Model?.Count ?? 5;
+    bool showImage = Model?.ShowImage ?? true;
+    int lines = Model?.Lines ?? 3;
+    string cardClass = Model?.CardClass ?? "mb-4";
+}
+
+@for (int i = 0; i < count; i++)
+{
+    <div class="card @cardClass">
+        <div class="card-body">
+            @if (showImage)
+            {
+                <div class="skeleton skeleton-img mb-3"></div>
+            }
+            
+            @for (int j = 0; j < lines; j++)
+            {
+                <div class="skeleton skeleton-text"></div>
+            }
+        </div>
+    </div>
+}
+
+@model LoadingSkeletonModel
+
+@functions {
+    public class LoadingSkeletonModel
+    {
+        public int? Count { get; set; } = 5;
+        public bool? ShowImage { get; set; } = true;
+        public int? Lines { get; set; } = 3;
+        public string CardClass { get; set; } = "mb-4";
+    }
+}
