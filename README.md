@@ -1,25 +1,30 @@
-# Product Management App
+# Product Management Application
 
-A full-featured product management application built with ASP.NET Core, Entity Framework Core, and Identity for user authentication and authorization.
+A web-based product management system built with ASP.NET Core 6, Entity Framework Core, and SQLite database.
 
 ## Features
 
-- User registration with email confirmation
-- Secure login/logout
-- User profile management with profile picture upload
-- Product categories management (CRUD operations)
-- Products management (CRUD operations)
-- Soft delete functionality
-- RESTful API endpoints
-- JWT authentication
+- **User Authentication**: Register, Login, and Profile Management
+- **Product Management**: Create, Read, Update, and Soft Delete products
+- **Category Management**: Create, Read, Update, and Soft Delete product categories
+- **Profile Management**: Edit profile information and upload profile pictures
+- **Responsive UI**: Modern, responsive design using Bootstrap 5
+
+## Technology Stack
+
+- **Backend**: ASP.NET Core 6
+- **Database**: SQLite with Entity Framework Core
+- **Frontend**: Razor Pages with Bootstrap 5
+- **Authentication**: ASP.NET Core Identity
+- **ORM**: Entity Framework Core
 
 ## Prerequisites
 
-- [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
-- [SQLite](https://sqlite.org/download.html) (for development)
-- [Node.js](https://nodejs.org/) (for frontend assets)
+- .NET 6 SDK
+- Visual Studio 2022 or VS Code
+- Git
 
-## Getting Started
+## Installation & Setup
 
 1. **Clone the repository**
    ```bash
@@ -27,11 +32,12 @@ A full-featured product management application built with ASP.NET Core, Entity F
    cd ProductManagementApp
    ```
 
-2. **Configure the application**
-   - Copy `appsettings.Development.json.example` to `appsettings.Development.json`
-   - Update the connection string and other settings as needed
+2. **Restore dependencies**
+   ```bash
+   dotnet restore
+   ```
 
-3. **Apply database migrations**
+3. **Run database migrations**
    ```bash
    dotnet ef database update
    ```
@@ -42,88 +48,71 @@ A full-featured product management application built with ASP.NET Core, Entity F
    ```
 
 5. **Access the application**
-   - Web interface: `https://localhost:5001`
-   - API documentation: `https://localhost:5237/swagger`
+   - Open your browser and navigate to: `http://localhost:5237`
+   - Swagger API documentation: `http://localhost:5237/swagger`
+
+## Default Users
+
+The application comes with pre-seeded users:
+
+**Admin User:**
+- Email: `admin@gmail.com`
+- Password: `Admin@123`
+
+**Regular User:**
+- Email: `gabriellak@gmail.com`
+- Password: `Gabriella@123`
+
+## Database Schema
+
+The application uses a relational database with the following entities:
+
+- **Users**: User authentication and profile information
+- **ProductCategories**: Product category management
+- **Products**: Product information and management
 
 ## API Endpoints
 
-### Authentication
-- `POST /api/auth/register` - Register a new user
-- `POST /api/auth/login` - Login and get JWT token
-- `POST /api/auth/logout` - Logout
+The application provides RESTful API endpoints for:
 
-### Profile
-- `GET /api/profile` - Get current user profile
-- `PUT /api/profile` - Update profile
-- `POST /api/profile/change-password` - Change password
-
-### Product Categories
-- `GET /api/productcategories` - Get all categories
-- `GET /api/productcategories/{id}` - Get category by ID
-- `POST /api/productcategories` - Create new category
-- `PUT /api/productcategories/{id}` - Update category
-- `DELETE /api/productcategories/{id}` - Soft delete category
-
-### Products
-- `GET /api/products` - Get all products
-- `GET /api/products/{id}` - Get product by ID
-- `POST /api/products` - Create new product
-- `PUT /api/products/{id}` - Update product
-- `DELETE /api/products/{id}` - Soft delete product
+- Authentication (Login/Register)
+- User Profile Management
+- Product CRUD Operations
+- Category CRUD Operations
 
 ## Project Structure
 
 ```
 ProductManagementApp/
-├── Controllers/         # API controllers
+├── Controllers/          # API Controllers
 ├── Data/                # Database context and migrations
-├── Models/              # Domain models
-├── Pages/               # Razor pages (if any)
+├── Models/              # Entity models
+├── Pages/               # Razor Pages
 ├── Services/            # Business logic services
-├── wwwroot/             # Static files
-├── Program.cs           # Application entry point
-└── README.md            # This file
+├── wwwroot/             # Static files (CSS, JS, images)
+└── Program.cs           # Application entry point
 ```
 
-## Configuration
+## Development
 
-The application can be configured using the following environment variables or `appsettings.json`:
-
-```json
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "Data Source=app.db"
-  },
-  "Jwt": {
-    "Key": "your-secret-key-here",
-    "Issuer": "ProductManagementApp",
-    "Audience": "ProductManagementAppUsers",
-    "ExpireDays": 7
-  },
-  "EmailSettings": {
-    "FromEmail": "noreply@yourdomain.com",
-    "SmtpServer": "smtp.yourprovider.com",
-    "Port": 587,
-    "Username": "your-email@yourdomain.com",
-    "Password": "your-email-password"
-  }
-}
+### Adding New Migrations
+```bash
+dotnet ef migrations add MigrationName
+dotnet ef database update
 ```
 
-## Security Considerations
+### Running Tests
+```bash
+dotnet test
+```
 
-- Always use HTTPS in production
-- Store sensitive information in environment variables or a secure secret manager
-- Keep dependencies up to date
-- Implement rate limiting for API endpoints
-- Use proper CORS policies
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- [.NET Core](https://dotnet.microsoft.com/)
-- [Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/)
-- [ASP.NET Core Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity)
+This project is licensed under the MIT License.

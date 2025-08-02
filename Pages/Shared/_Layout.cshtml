@@ -95,6 +95,19 @@
             object-fit: cover;
             border: 2px solid white;
         }
+        
+        /* Ensure all links and buttons are clickable */
+        a, button, .btn {
+            cursor: pointer !important;
+            pointer-events: auto !important;
+            z-index: 1000 !important;
+            position: relative !important;
+        }
+        
+        /* Remove any potential overlay issues */
+        .card, .container, .row, .col {
+            pointer-events: auto !important;
+        }
     </style>
 </head>
 <body>
