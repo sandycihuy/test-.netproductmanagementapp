@@ -16,6 +16,7 @@ namespace ProductManagementApp.Models
         public decimal Price { get; set; }
         public string? ImageUrl { get; set; }
         public bool IsDeleted { get; set; }
+        public bool IsActive { get; set; } = true;  // Ditambahkan disini
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public int CategoryId { get; set; }
         public virtual ProductCategory? Category { get; set; }

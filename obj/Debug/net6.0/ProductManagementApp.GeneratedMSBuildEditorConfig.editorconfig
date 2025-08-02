@@ -15,10 +15,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = /Users/mac/Documents/new/test/ProductManagementApp
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/mac/Documents/new/test/ProductManagementApp/Areas/Identity/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/mac/Documents/new/test/ProductManagementApp/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -29,6 +25,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/mac/Documents/new/test/ProductManagementApp/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mac/Documents/new/test/ProductManagementApp/Pages/Shared/_LoadingSkeleton.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19Mb2FkaW5nU2tlbGV0b24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/mac/Documents/new/test/ProductManagementApp/Pages/Shared/_LoginPartial.cshtml]

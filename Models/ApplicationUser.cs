@@ -17,10 +17,12 @@ namespace ProductManagementApp.Models
         {
             Products = new List<Product>();
             ProductCategories = new List<ProductCategory>();
+            CreatedAt = DateTime.UtcNow; 
         }
 
         public string FullName { get; set; } = string.Empty;
         public string? ProfilePicture { get; set; }
+        public DateTime CreatedAt { get; set; } 
         public virtual ICollection<Product> Products { get; set; }
         public virtual ICollection<ProductCategory> ProductCategories { get; set; }
     }

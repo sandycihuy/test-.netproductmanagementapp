@@ -10,7 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-
+using System.ComponentModel.DataAnnotations;
 namespace ProductManagementApp.Controllers
 {
     [Route("api/[controller]")]
